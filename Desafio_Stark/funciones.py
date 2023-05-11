@@ -14,49 +14,6 @@ def sumar(a: int, b: int)->int:
     rta = a + b
     return rta
 
-def mostrar_menu() -> int:
-    """muestra un menu
-
-    Returns:
-        int: numero de opcion elegida por el usuario
-    """
-    while True:
-        imprimir_dato("---Menú de opciones---")
-        imprimir_dato("Opcion 1: Mostrar nombre de los superheroes")
-        imprimir_dato("Opcion 2: Mostrar nombre y altura de los superheroes")
-        imprimir_dato("Opcion 3: Superheroe mas alto")
-        imprimir_dato("Opcion 4: Superheroe mas bajo")
-        imprimir_dato("Opcion 5: Altura promedio de los superheroes")
-        imprimir_dato("Opcion 6: Mostrar nombre del superheroe mas alto y mas bajo")
-        imprimir_dato("Opcion 7: Mostrar superheroe mas pesado y mas liviano")
-        imprimir_dato("Opcion 8: Mostrar nombre de heroes femeninas")
-        imprimir_dato("Opcion 9: Mostrar nombre de heroes masculinos")
-        imprimir_dato("Opcion 10': Calcular nombre de masculino mas alto")
-        imprimir_dato("Opcion 11': Calcular nombre de femenina mas alto")
-        imprimir_dato("Opcion 12': Calcular nombre de masculino mas bajo")
-        imprimir_dato("Opcion 13': Calcular nombre de femenina mas baja")
-        imprimir_dato("Opcion 14': Calcular altura promedio de los heroes masculinos")
-        imprimir_dato("Opcion 15': Calcular altura promedio de los heroes femeninos")
-        imprimir_dato("Opcion 16': Mostrar opciones 10,11,12,13")
-        imprimir_dato("Opcion 17': Determinar cuantos heroes tienen cada tipo de ojos")
-        imprimir_dato("Opcion 18': Determinar cuantos heroes tienen cada tipo de pelo")
-        imprimir_dato("Opcion 19': Determinar cuántos superhéroes tienen cada tipo de inteligencia")
-        imprimir_dato("Opcion 20': Listar todos los superhéroes agrupados por color de ojos")
-        imprimir_dato("Opcion 21': Listar todos los superhéroes agrupados por color de pelo")
-        imprimir_dato("Opcion 22': Listar todos los superhéroes agrupados por tipo de inteligencia")
-        imprimir_dato("Opcion 23: Salir")
-        numero_opcion = input("Ingrese una opcion entre 1 y 23: ")
-        if (numero_opcion.isdigit()):
-            numero_opcion = int(numero_opcion)
-            if (numero_opcion < 1 or numero_opcion > 23):
-                print("ERROR, opcion no valida. ")
-                continue
-        else:
-            print("Eso no es un numero")
-            continue
-        os.system("cls")
-        return numero_opcion
-
 def mostrar_lista(lista:list, titulo:str):
     """muestra una lista
 
