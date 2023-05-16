@@ -70,6 +70,27 @@ def stark_imprimir_nombres_con_iniciales(lista:list) -> None:
     else:
         print("ERROR. El parametro no es una lista, o es una lista vacia.")
 
+def generar_codigo_heroe(id_heroe:int, genero_heroe:str) -> str:
+    """recibe un id y un genero "F","M","NB" e imprime ambos en un formato especifico
+
+    Args:
+        id_heroe (int): numero de id
+        genero_heroe (str): genero
+
+    Returns:
+        str: retorna el str solicitado o N/A en caso de error
+    """
+    nuevo_str = ""
+    if re.match(r'^\d+\.?\d*$', str(id_heroe)) and (genero_heroe == "M" or genero_heroe == "F" or genero_heroe == "NB"):
+        nuevo_str = "{}-{:08}".format(genero_heroe, id_heroe)[:10]
+        return nuevo_str
+    else:
+        return "N/A"
+
+
+
+
+
 
 ##############################################################
 
