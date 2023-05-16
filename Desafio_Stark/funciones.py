@@ -25,7 +25,7 @@ def extraer_iniciales(nombre:str) -> str:
     return iniciales
 
 def definir_iniciales_nombre(dicc:dict) -> bool:
-    """recibe un diccionario y si este tiene la key "nombre" se extraen las iniciales y se agregan a una nueva key. 
+    """recibe un diccionario y si este tiene la key "nombre" se extraen las iniciales y se agregan a una nueva key llamada "iniciales". 
 
     Args:
         dicc (dict): diccionario para extraer iniciales
@@ -39,7 +39,23 @@ def definir_iniciales_nombre(dicc:dict) -> bool:
         dicc["iniciales"] = extraer_iniciales(dicc["nombre"])
         return True
 
+def agregar_iniciales_nombre(lista:list) -> bool:
+    """recibe una lista y la itera mostrando las iniciales de los nombres de cada elemento de la lista
 
+    Args:
+        lista (list): lista a iterar
+
+    Returns:
+        bool: True en caso de que no haya errores, False si hay errores.
+    """
+    if not lista:
+        return False
+    for heroe in lista:
+        if definir_iniciales_nombre(heroe):
+            definir_iniciales_nombre(heroe)
+        else:
+            return "El origen de datos no contiene el formato correcto"
+    return True
 
 
 ##############################################################
@@ -366,7 +382,7 @@ def stark_imprimir_nombres_heroes(lista):
 
 def obtener_nombre_y_dato(dict: dict, key: str) -> str:
     if key in dict:
-        return f"Nombre: {dict['nombre']} | {key}: {dict[key]}"
+        return f"Nombre: {dict['nombre']} | {key.capitalize()}: {dict[key]}"
     else:
         print(f"No se encontro {key}")
 
