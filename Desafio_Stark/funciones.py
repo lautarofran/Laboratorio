@@ -1,6 +1,36 @@
 import os
 import re
 
+def extraer_iniciales(nombre:str) -> str:
+    """extrae las iniciales de las palabras que pases, exceptuando si está el articulo "the", y en caso de haber - se reemplaza por un espacio
+
+    Args:
+        nombre (str): palabras para extraer iniciales
+
+    Returns:
+        str: inicales
+    """
+    iniciales = ""
+    if not nombre:
+        return "N/A"
+    if re.search("-", nombre):
+        nombre = re.sub("-", " ", nombre)
+    nombre = re.split(" ", nombre)
+    for i in nombre:
+        if i.lower() == "the":
+            continue
+        else:
+            iniciales += i[0].upper() + "."
+    
+    return iniciales
+
+
+
+
+
+
+##############################################################
+
 def sumar(a: int, b: int)->int:
     """suma dos numeros enteros
 
