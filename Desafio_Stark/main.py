@@ -4,9 +4,6 @@ from funciones import *
 
 
 
-
-
-
 stark_normalizar_datos(lista_personajes)
                 
 # stark_marvel_app(lista_personajes)

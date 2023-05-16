@@ -24,7 +24,20 @@ def extraer_iniciales(nombre:str) -> str:
     
     return iniciales
 
+def definir_iniciales_nombre(dicc:dict) -> bool:
+    """recibe un diccionario y si este tiene la key "nombre" se extraen las iniciales y se agregan a una nueva key. 
 
+    Args:
+        dicc (dict): diccionario para extraer iniciales
+
+    Returns:
+        bool: False en caso de error, True en caso de correcto
+    """
+    if not dicc or not "nombre" in dicc:
+        return False
+    else:
+        dicc["iniciales"] = extraer_iniciales(dicc["nombre"])
+        return True
 
 
 
