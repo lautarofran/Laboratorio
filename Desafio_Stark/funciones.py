@@ -57,6 +57,19 @@ def agregar_iniciales_nombre(lista:list) -> bool:
             return "El origen de datos no contiene el formato correcto"
     return True
 
+def stark_imprimir_nombres_con_iniciales(lista:list) -> None:
+    """recibe una lista e imprime el nombre y al lado las iniciales
+
+    Args:
+        lista (list): lista para imprimir nombre e iniciales
+    """
+    if isinstance(lista, list) and len(lista) > 0:
+        agregar_iniciales_nombre(lista)
+        for heroe in lista:
+            print("* ",heroe['nombre'],"(" + heroe['iniciales'] + ")") #use los + porque de esta manera no me ponia espacios en las iniciales ( D.M )
+    else:
+        print("ERROR. El parametro no es una lista, o es una lista vacia.")
+
 
 ##############################################################
 
