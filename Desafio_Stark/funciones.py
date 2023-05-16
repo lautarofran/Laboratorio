@@ -87,7 +87,23 @@ def generar_codigo_heroe(id_heroe:int, genero_heroe:str) -> str:
     else:
         return "N/A"
 
+def agregar_codigo_heroe(heroe:dict, id_heroe:int) -> bool:
+    """agrega una key "codigo_heroe" al heroe recibido por parametro se le asigna un id
 
+    Args:
+        heroe (dict): heroe a agregar key
+        id_heroe (int): representa el nuevo id del heroe 
+
+    Returns:
+        bool: True en caso de no haber errores, False en caso de si haber
+    """
+    tamaño = len(generar_codigo_heroe(id_heroe,heroe["genero"]))
+    if heroe:
+        if tamaño == 10:
+            heroe["codigo_heroe"] = generar_codigo_heroe(id_heroe, heroe["genero"])
+            return True
+    else:
+        return False
 
 
 
