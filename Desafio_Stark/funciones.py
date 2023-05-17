@@ -105,6 +105,28 @@ def agregar_codigo_heroe(heroe:dict, id_heroe:int) -> bool:
     else:
         return False
 
+def stark_generar_codigos_heroes(lista:list):
+    """La función itera la lista de personajes y le agrega el código a cada uno de los personajes
+
+    Args:
+        lista (list): lista a iterar
+    """
+    if isinstance(lista, list) and len(lista) > 0:
+        for heroe in lista:
+            if not isinstance(heroe, dict):
+                print("El origen de datos no contiene el formato correcto")
+            elif "genero" not in heroe:
+                print("El origen de datos no contiene el formato correcto")
+            else:
+                posicion = lista.index(heroe) # no se como hacer que comience por el 1 
+                agregar_codigo_heroe(heroe, posicion)
+        print(f"Se asignaron {posicion} codigos")
+        print("El codigo del primer heroe es: ",{lista[0]["codigo_heroe"]})
+        print("El codigo del ultimo heroe es: ",{lista[posicion]["codigo_heroe"]})
+    else:
+        print("ERROR. El parametro no es una lista, o es una lista vacia.")
+
+
 
 
 
