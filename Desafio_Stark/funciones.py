@@ -170,7 +170,25 @@ def sanitizar_flotante(numero:str) -> int:
     else:
         return -1
 
+def sanitizar_string(valor_str:str, valor_por_defecto:str="-") -> str:
+    """la funcion recibe un str y lo analiza para determinar si es solo texto
 
+    Args:
+        valor_str (str): str a analizar
+        valor_por_defecto (str, optional): un string que representa un valor por defecto. Defaults to "-".
+
+    Returns:
+        str: si el str analizado tiene numeros retorna "N/A"; si no retorna el texto validado en minuscula; si el str a validar esta vacio se retorna el valor_por_defecto
+    """
+    valor_str = valor_str.strip()
+    valor_str = valor_str.replace("/", " ")
+    if not valor_str and valor_por_defecto:
+        return valor_por_defecto.lower()
+    else:
+        if not re.findall(r'\d', valor_str):
+            return valor_str.lower()
+        else:
+            return "N/A"
 
 
 
