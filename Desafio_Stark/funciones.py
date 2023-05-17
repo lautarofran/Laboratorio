@@ -126,7 +126,27 @@ def stark_generar_codigos_heroes(lista:list):
     else:
         print("ERROR. El parametro no es una lista, o es una lista vacia.")
 
+def sanitizar_entero(numero:str) -> int:
+    """analiza el string recibido y determina si es un número entero positivo
 
+    Args:
+        numero (str): cadena str a analizar
+
+    Returns:
+        int: retorna: numero entero si esta todo bien; -1 si no es numero; -2 si es negativo; -3 problemas al castear
+    """
+    numero = numero.strip()
+    if re.match(r'^[-+]?\d*$', str(numero)):
+        try:
+            numero = int(numero)
+            if numero < 0:
+                return -2
+            else:
+                return numero
+        except ValueError:
+            return -3
+    else:
+        return -1
 
 
 
