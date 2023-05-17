@@ -148,6 +148,39 @@ def sanitizar_entero(numero:str) -> int:
     else:
         return -1
 
+def sanitizar_flotante(numero:str) -> int:
+    """analiza el string recibido y determina si es un número float positivo
+
+    Args:
+        numero (str): cadena str a analizar
+
+    Returns:
+        int: retorna el numero float si esta todo bien; -1 si no es numero; -2 si es negativo; -3 problemas al castear
+    """
+    numero = numero.strip()
+    if re.match(r'^[-+]?\d+([.,]\d+)+$', str(numero)):
+        try:
+            numero = float(numero)
+            if numero < 0:
+                return -2
+            else:
+                return numero
+        except ValueError:
+            return -3
+    else:
+        return -1
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ##############################################################
